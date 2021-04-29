@@ -14,7 +14,7 @@ Inputs required for the deployment needs to be keyed inside the specifed tags <>
 * example-route: Part of the route of the URI end point to detect malicious traffic
 * country-to-be-blocked: Traffic from any country that needs to be blocked
 
-# functions
+# Functions
 
 This Terraform project will validate traffic against five match sets
 * MatchBotInUserAgent: Match a bot traffic in user agent
