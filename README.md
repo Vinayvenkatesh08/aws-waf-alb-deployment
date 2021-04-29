@@ -31,3 +31,10 @@ AWS CLI Profile
 
 ## Usage
 ```./deploy.sh```
+
+## Outputs
+
+* web_acl_id
+* web_acl_arn
+* web_acl_capacity_units
+* web_acl_logging_config_id
