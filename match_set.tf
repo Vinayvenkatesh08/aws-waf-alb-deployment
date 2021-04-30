@@ -1,4 +1,4 @@
-resource "aws_waf_byte_match_set" "bot-user-agent" {
+resource "aws_wafv2_byte_match_set" "bot-user-agent" {
   name = "MatchBotInUserAgent"
   byte_match_tuple {
     text_transformation = "LOWERCASE"
@@ -11,7 +11,7 @@ resource "aws_waf_byte_match_set" "bot-user-agent" {
   }
 }
 
-resource "aws_waf_byte_match_set" "example-uri" {
+resource "aws_wafv2_byte_match_set" "example-uri" {
   name = "MatchExampleRouteInURI"
   byte_match_tuple {
     text_transformation = "NONE"
@@ -23,7 +23,7 @@ resource "aws_waf_byte_match_set" "example-uri" {
   }
 }
 
-resource "aws_waf_sql_injection_match_set" "sql-injection-match-set" {
+resource "aws_wafv2_sql_injection_match_set" "sql-injection-match-set" {
   name = "tf-sql_injection_match_set"
 
   sql_injection_match_tuples {
@@ -35,7 +35,7 @@ resource "aws_waf_sql_injection_match_set" "sql-injection-match-set" {
   }
 }
 
-resource "aws_waf_xss_match_set" "xss-match-set" {
+resource "aws_wafv2_xss_match_set" "xss-match-set" {
   name = "xss_match_set"
     xss_match_tuples {
     text_transformation = "NONE"
@@ -54,7 +54,7 @@ resource "aws_waf_xss_match_set" "xss-match-set" {
   }
 }
 
-resource "aws_waf_geo_match_set" "geo_match_set" {
+resource "aws_wafv2_geo_match_set" "geo_match_set" {
   name = "geo_match_set"
 
   geo_match_constraint {
