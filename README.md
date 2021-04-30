@@ -16,7 +16,9 @@ Inputs required for the deployment needs to be keyed inside the specifed tags <>
 
 # Functions
 
-This Terraform project will validate traffic against five match sets
+This Terraform project will validate traffic against two AWS managed rule groups and five match sets
+* AWS Managed Rule Group1: Common Rule Set
+* AWS Managed Rule Group2: Known Bad Input
 * MatchBotInUserAgent: Match a bot traffic in user agent
 * MatchExampleRouteInURI: Match part of the route of the URI End Point
 * sql_injection_match_set: Look for snippets of malicious SQL code and eliminate unusual formatting that is used to bypass WAF
