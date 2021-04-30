@@ -73,12 +73,39 @@ resource "aws_wafv2_web_acl" "managed_rule_group" {
 
   tags = {
     name = "AWSManagedRulesKnownBadInputsRuleSet"
-    Vednor = "AWS"
+    Vendor = "AWS"
+  }
+
+    rule {
+    name     = "rule-3"
+    priority = 3
+
+    override_action {
+      count {}
+    }
+
+    statement {
+      managed_rule_group_statement {
+        name        = "AWSManagedRulesSQLiRuleSet"
+        vendor_name = "AWS"
+      }
+    }
+
+    visibility_config {
+      cloudwatch_metrics_enabled = false
+      metric_name                = "AWS-Managed-Rules-SQLi-RuleSet"
+      sampled_requests_enabled   = false
+    }
+  }
+
+  tags = {
+    name = "AWS-Managed-Rules-SQLi-RuleSet"
+    Vendor = "AWS"
   }
 
   visibility_config {
     cloudwatch_metrics_enabled = true
-    metric_name                = "AWS-Managed-Rules-Known-Bad-Inputs-Rule-Set"
+    metric_name                = "AWS-Managed-Rules"
     sampled_requests_enabled   = false
   }
 }
