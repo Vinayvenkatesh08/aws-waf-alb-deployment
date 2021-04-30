@@ -14,7 +14,7 @@ Inputs required for the deployment needs to be keyed inside the specifed tags <>
 * example-route: Part of the route of the URI end point to detect malicious traffic
 * country-to-be-blocked: Traffic from any country that needs to be blocked
 
-# Functions
+## Functions
 
 This Terraform project will validate traffic against two AWS managed rule groups and five match sets
 * AWS Managed Rule Group1: Common Rule Set
